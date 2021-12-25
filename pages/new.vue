@@ -32,7 +32,6 @@
     </div>
     <div>
       <textarea
-        required
         v-model="content"
         :class="inputCls"
         placeholder="What's up"
@@ -89,14 +88,14 @@ export default {
       add_image: true,
       error: null,
       loading: false,
-      username: "moehmeni",
+      username: "",
       user_image_url:
         "https://gravatar.com/avatar/e3297fb564e80a12d448ff5ffd16c2c0?s=200&d=retro&r=x",
       image_url:
-        "https://i1.sndcdn.com/avatars-VLbtGfCPXo70wHyY-8MMbjw-t500x500.jpg",
+        "https://i.pinimg.com/550x/a7/3d/6e/a73d6e4ac85c6a822841e449b24c78e1.jpg",
       image_url_2: "",
-      title: "This is the title",
-      content: "Yooooo this is a new content",
+      title: "",
+      content: "",
       inputCls:
         "rounded-xl px-4 py-3 border border-2 bg-gray-50 hover:bg-gray-100 focus:bg-transparent focus:outline-none focus:ring focus:ring-green-200",
     };
@@ -123,7 +122,7 @@ export default {
       if (this.image_url_2.trim()) {
         images.push(this.image_url_2);
       }
-      if (u && t && c) {
+      if (u && t) {
         const data = {
           user: { name: u, avatar: u_avatar, color: this.getRandomColor() },
           title: t,
@@ -140,7 +139,7 @@ export default {
           this.$router.push("/");
         }
       } else {
-        alert("Please fill out the all required fields");
+        alert("Please fill out username and title fields");
       }
     },
   },
