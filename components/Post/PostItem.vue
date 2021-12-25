@@ -44,7 +44,7 @@
           <img
             @click="toggleImage(i)"
             :class="{ scaled: img_active && i == img_i }"
-            class="w-full rounded-2xl"
+            class="w-full min-h-full rounded-2xl"
             :src="img"
             :alt="post.title + ' image'"
           />
