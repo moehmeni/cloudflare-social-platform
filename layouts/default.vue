@@ -22,7 +22,9 @@
           </nuxt-link>
         </div>
         <div>
-          <nuxt-link :class="cls" to="/new">Write something</nuxt-link>
+          <nuxt-link :class="writeBtnClass" to="/new"
+            >Write something</nuxt-link
+          >
         </div>
       </div>
     </header>
@@ -38,13 +40,11 @@ export default {
     return {
       writeModal: false,
       headerHeight: "60px",
-      btnColor: "indigo",
     };
   },
   computed: {
-    cls() {
-      let c = this.btnColor;
-      let focus = `bg-${c}-500 hover:bg-${c}-600 active:bg-${c}-700 focus:outline-none focus:ring focus:ring-${c}-300`;
+    writeBtnClass() {
+      let focus = `bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300`;
       return "rounded-full px-3 text-white py-1 " + focus;
     },
   },
