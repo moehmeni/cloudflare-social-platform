@@ -28,6 +28,11 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
+  head() {
+    return {
+      title: "Social Platform",
+    };
+  },
   data() {
     return {
       loading: false,

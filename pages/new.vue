@@ -63,7 +63,7 @@
     </div>
 
     <div>
-      <Cbutton :click="createPost" color="green">Post</Cbutton>
+      <button :class="postBtnClass" @click="createPost">Post</button>
     </div>
     <div v-if="error">
       <div class="font-bold text-red-500 bg-red-50" v-text="error"></div>
@@ -78,6 +78,11 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
+  head() {
+    return {
+      title: "Create a new post",
+    };
+  },
   data() {
     return {
       avatar_change: false,
@@ -93,7 +98,7 @@ export default {
       title: "This is the title",
       content: "Yooooo this is a new content",
       inputCls:
-        "rounded-xl px-4 py-3 border border-2 bg-gray-50 hover:bg-gray-100 focus:bg-transparent focus:outline-none focus:ring focus:ring-indigo-200",
+        "rounded-xl px-4 py-3 border border-2 bg-gray-50 hover:bg-gray-100 focus:bg-transparent focus:outline-none focus:ring focus:ring-green-200",
     };
   },
   methods: {
@@ -143,6 +148,10 @@ export default {
     ...mapGetters({
       newPost: "posts/newPost",
     }),
+    postBtnClass() {
+      let focus = `bg-green-500 hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring focus:ring-green-300`;
+      return "rounded-full px-3 text-white py-1 " + focus;
+    },
   },
 };
 </script>
