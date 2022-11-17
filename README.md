@@ -1,2 +1,2 @@
 # cloudflare-social-platform
- Cloudflare general assignment (social platform) front-end
+Social media front-end for Cloudflare 2022 internship (social media) entrance assignment. Based on Cloudflare pages
